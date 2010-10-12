@@ -2,8 +2,8 @@ class Game < ActiveRecord::Base
   
   HAND_LIST = %w( rock paper scissors )
   
-  validates_inclusion_of :players_hand, :in => HAND_LIST, :message => "Players hand must be one of the following: #{HAND_LIST.join(',')}"
-  validates_inclusion_of :computers_hand, :in => HAND_LIST, :message => "Computers hand must be one of the following: #{HAND_LIST.join(',')}"
+  validates_inclusion_of :players_hand, :in => HAND_LIST, :message => "must be one of the following: #{HAND_LIST.join(',')}"
+  validates_inclusion_of :computers_hand, :in => HAND_LIST, :message => "must be one of the following: #{HAND_LIST.join(',')}"
 
   before_create :judges_decision
 
@@ -16,6 +16,10 @@ class Game < ActiveRecord::Base
     set_winning_move
     self.winner = 'draw' and return if draw?
     self.winner = (player_won?) ? 'player' : 'computer'
+  end
+  
+  def complete?
+    !winner.nil?
   end
   
   private

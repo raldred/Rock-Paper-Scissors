@@ -8,6 +8,14 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(params[:game])
     @game.play
-    
+    if @game.complete?
+      redirect_to @game
+    else
+      render :new
+    end
+  end
+  
+  def show
+    @game = Game.find(params[:id])
   end
 end

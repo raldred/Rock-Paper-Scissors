@@ -13,3 +13,9 @@ Then /^the form should have the following moves:$/ do |table|
     end
   end
 end
+
+Then /^I should see the followings error: "([^"]*)"$/ do |text|
+  response.body.should have_tag('div#errorExplanation') do
+    with_tag('li',:text => text)
+  end
+end

@@ -17,4 +17,12 @@ Feature: Game
       
   Scenario: Not selecting a move should return an error
     When I press "Fight!"
-    Then I should see an error
+    Then I should see the followings error: "Players hand must be one of the following: rock,paper,scissors"
+    
+  Scenario: Selecting a move should display the game result
+    When I choose "Rock"
+    And I press "Fight!"
+    Then I should see the game result
+  
+  
+  

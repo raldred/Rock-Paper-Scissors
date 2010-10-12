@@ -42,12 +42,12 @@ describe Game do
   
   it "should be invalid without a players_hand" do
     @game.should_not be_valid
-    @game.errors.on(:players_hand).should == "Players hand must be one of the following: rock,paper,scissors"
+    @game.errors.on(:players_hand).should == "must be one of the following: rock,paper,scissors"
   end
   
   it "should be invalid without a computers_hand" do
     @game.should_not be_valid
-    @game.errors.on(:computers_hand).should == "Computers hand must be one of the following: rock,paper,scissors"
+    @game.errors.on(:computers_hand).should == "must be one of the following: rock,paper,scissors"
   end
   
   describe "#players_hand" do
@@ -90,7 +90,7 @@ describe Game do
       end
       it "should have an error" do
         @game.should_not be_valid
-        @game.errors.on(:players_hand).should == 'Players hand must be one of the following: rock,paper,scissors'
+        @game.errors.on(:players_hand).should == 'must be one of the following: rock,paper,scissors'
       end
       
       it "should not set the winner" do
