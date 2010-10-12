@@ -23,6 +23,9 @@ Feature: Game
     When I choose "Rock"
     And I press "Fight!"
     Then I should see the game result
-  
+    And I should see my choice
+    And I should see the computers choice
+    When I press "Play Again"
+    Then I should be on the homepage
   
   

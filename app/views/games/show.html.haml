@@ -4,10 +4,11 @@
   .hands.clearfix
     .players_hand
       %h3 Your Hand
-      =@game.players_hand
-    .computers_move
+      %span= @game.players_hand.titlecase
+    .computers_hand
       %h3 Computers Hand
-      =@game.computers_hand
+      %span= @game.computers_hand.titlecase
 
   .winner
-    =@game.winner
+    -game_winner(@game)
+    =button_to 'Play Again', root_path

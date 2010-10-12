@@ -1,17 +1,17 @@
 %h2 New Game
 
-=error_messages_for :game
+=error_messages_for :game, :header_message => false, :message => false
 
 %h3 Make your move!
 - form_for @game do |f|
   %div
-    %label Rock
+    =f.label :players_hand_rock, 'Rock'
     =f.radio_button :players_hand, 'rock'
   %div
-    %label Paper
+    =f.label :players_hand_paper, 'Paper'
     =f.radio_button :players_hand, 'paper'
   %div
-    %label Scissors
+    =f.label :players_hand_scissors, 'Scissors'
     =f.radio_button :players_hand, 'scissors'
     
   %div

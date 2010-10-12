@@ -9,7 +9,7 @@ class GamesController < ApplicationController
     @game = Game.new(params[:game])
     @game.play
     if @game.complete?
-      redirect_to @game
+      redirect_to :action => :show, :id => @game.id
     else
       render :new
     end

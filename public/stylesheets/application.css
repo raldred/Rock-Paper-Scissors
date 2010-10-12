@@ -9,9 +9,10 @@ h1,h2,h3 {margin:0;}
 #container {
   width:580px;
   margin: 0 auto;
-  border-left:1px solid #f1f1f1;
-  border-right:1px solid #f1f1f1;
+  margin-top: 10px;
+  border:1px solid #B1B1B1;
   padding:20px 10px;
+  background:#f9f9f9;
 }
 
 #header {
@@ -22,11 +23,52 @@ h1,h2,h3 {margin:0;}
   margin-bottom:0.5em;
 }
 
-.result
+.errorExplanation {
+  color:red;
+}
 
-.hands div {
+form div.fieldWithErrors {
   float:left;
-  border:1px solid #f1f1f1;
+  background:red;
+}
+
+.result {
+  width:100%;
+}
+
+.result .hands {
+  width:485px;
+  margin:0 auto;
+}
+
+.result .hands div {
+  width:200px;
+  float:left;
+  border:1px solid #B1B1B1;
+  padding:10px;
+  margin:10px;
+  text-align:center;
+}
+
+.result .winner {
+  border-top:2px solid #B1B1B1;
+  text-align:center;
+  padding-top:20px;
+}
+
+.result .winner span {
+  font-size:1.5em;
+}
+.result .winner .lose {
+  color:#CB2119;
+}
+
+.result .winner .win {
+  color:#45BA2E;
+}
+
+.result .winner .draw {
+  color:#315299;
 }
 
 

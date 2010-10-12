@@ -19,3 +19,15 @@ Then /^I should see the followings error: "([^"]*)"$/ do |text|
     with_tag('li',:text => text)
   end
 end
+
+Then /^I should see the game result$/ do
+  response.body.should have_tag('.result')
+end
+
+Then /^I should see my choice$/ do
+  response.body.should have_tag('.players_hand span', :text => 'Rock')
+end
+
+Then /^I should see the computers choice$/ do
+  response.body.should have_tag('.computers_hand span', :text => /Rock|Paper|Scissors/)
+end
