@@ -1,0 +1,12 @@
+log/*.*
+tmp/*
+!tmp/cache
+build/*
+public/cache/**/*
+config/database.yml
+vendor/plugins/doc/**/*
+db/*.sqlite3
+db/*.sqlite3-journal
+db/*journal*
+.DS_Store
+vendor/rails
