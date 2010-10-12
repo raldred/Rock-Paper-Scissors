@@ -1,0 +1,19 @@
+%h2 New Game
+
+=error_messages_for :game
+
+%h3 Make your move!
+- form_for @game do |f|
+  %div
+    %label Rock
+    =f.radio_button :players_hand, 'rock'
+  %div
+    %label Paper
+    =f.radio_button :players_hand, 'paper'
+  %div
+    %label Scissors
+    =f.radio_button :players_hand, 'scissors'
+    
+  %div
+    =f.submit 'Fight!'
+  

@@ -3,6 +3,18 @@ Feature: Game
   As a gamer
   I want to be able to play a game
   
-  Scenario: Game home screen
-    When I go to the homepage
-    Then I should see a "New Game" button
+  Background:
+    Given I am on the homepage
+    When I press "New Game"
+    
+  Scenario: New Game
+    Then I should see a game form
+    And the form should have the following moves:
+      | move     |
+      | rock     |
+      | paper    |
+      | scissors |
+      
+  Scenario: Not selecting a move should return an error
+    When I press "Fight!"
+    Then I should see an error
